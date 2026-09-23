@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Guia de bolso para médicos: sinais que levantam suspeita de violência sexual contra crianças e adolescentes, por especialidade, e o que fazer depois da suspeita. 2º CONAMED.">
+<title>Que alguém pergunte · 2º CONAMED</title>
+<style>
+:root{
+  --pink:#FFD0F5;
+  --paper:#FFF4FC;
+  --navy:#0C1670;
+  --navy-soft:#3A4290;
+  --ink:#0C1670;
+  --on-navy:#FFD0F5;
+  --line:rgba(12,22,112,.28);
+  --line-strong:rgba(12,22,112,.6);
+  --focus:#0C1670;
+  --focus-ring:#FFFFFF;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --pink:#0B1152;
+    --paper:#161D6B;
+    --navy:#FFD0F5;
+    --navy-soft:#D9B6D3;
+    --ink:#FFEFFB;
+    --on-navy:#0B1152;
+    --line:rgba(255,208,245,.32);
+    --line-strong:rgba(255,208,245,.7);
+    --focus:#FFD0F5;
+    --focus-ring:#0B1152;
+  }
+}
+:root[data-theme="dark"]{
+  --pink:#0B1152;
+  --paper:#161D6B;
+  --navy:#FFD0F5;
+  --navy-soft:#D9B6D3;
+  --ink:#FFEFFB;
+  --on-navy:#0B1152;
+  --line:rgba(255,208,245,.32);
+  --line-strong:rgba(255,208,245,.7);
+  --focus:#FFD0F5;
+  --focus-ring:#0B1152;
+}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);-webkit-text-size-adjust:100%}
+*,*::before,*::after{box-sizing:inherit}
+body{
+  margin:0;
+  background:var(--pink);
+  color:var(--ink);
+  font-family:Arial,"Helvetica Neue",Helvetica,system-ui,sans-serif;
+  font-size:17px;
+  line-height:1.5;
+  min-height:100%;
+}
+img,svg{max-width:100%}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;box-shadow:0 0 0 5px var(--focus-ring)}
+h1:focus{outline:none;box-shadow:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- cabeçalho fixo ---------- */
+.top{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:10;
+  background:var(--pink);
+  border-bottom:2px solid var(--navy);
+  display:flex;align-items:center;gap:8px;
+  padding:8px 12px;
+  min-height:60px;
+}
+.top .brand{font-weight:700;font-size:16px;letter-spacing:.02em;color:var(--navy);padding:0 4px}
+.top .ttl{flex:1;min-width:0;font-weight:700;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--navy)}
+.back{
+  display:inline-flex;align-items:center;gap:6px;
+  min-height:44px;min-width:44px;padding:0 12px 0 8px;
+  border:2px solid var(--navy);border-radius:999px;background:transparent;color:var(--navy);
+  font-weight:700;font-size:16px;cursor:pointer;
+}
+.back svg{width:18px;height:18px}
+.d100{
+  display:inline-flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:44px;min-width:64px;padding:2px 12px;
+  background:var(--navy);color:var(--on-navy);border-radius:10px;text-decoration:none;
+  line-height:1.05;
+}
+.d100 b{font-size:20px;letter-spacing:.02em}
+.d100 small{font-size:11px;opacity:.9}
+
+/* ---------- estrutura ---------- */
+main{max-width:600px;margin:0 auto;padding:20px 16px 40px}
+.view{display:none}
+.view.on{display:block}
+h1{font-size:30px;line-height:1.15;margin:8px 0 12px;color:var(--navy);letter-spacing:-.01em}
+h2{font-size:21px;line-height:1.25;margin:32px 0 10px;color:var(--navy)}
+h3{font-size:17px;margin:18px 0 6px;color:var(--navy)}
+p{margin:0 0 12px}
+.lead{font-size:19px;line-height:1.4;color:var(--navy);margin-bottom:20px}
+.muted{color:var(--navy-soft);font-size:15px}
+hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+
+/* botões grandes */
+.big{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  width:100%;min-height:64px;padding:14px 18px;margin:0 0 12px;
+  background:var(--navy);color:var(--on-navy);border:2px solid var(--navy);border-radius:14px;
+  text-align:left;text-decoration:none;font-weight:700;font-size:19px;line-height:1.2;cursor:pointer;
+}
+.big.ghost{background:transparent;color:var(--navy)}
+.big svg{flex:none;width:22px;height:22px}
+.big small{display:block;font-weight:400;font-size:15px;opacity:.9;margin-top:3px}
+
+/* citação de abertura */
+.hero{
+  margin:8px 0 28px;padding:0 0 0 18px;border-left:6px solid var(--navy);
+}
+.hero .q{font-size:34px;line-height:1.1;font-weight:700;color:var(--navy);letter-spacing:-.015em;margin:0 0 10px}
+.hero .who{font-size:15px;color:var(--navy-soft);margin:0}
+
+/* aviso */
+.aviso{
+  border:2px solid var(--navy);border-radius:14px;padding:14px 16px;margin:24px 0 8px;background:var(--paper);
+}
+.aviso p{margin:0 0 8px}
+.aviso p:last-child{margin:0}
+
+/* lista de especialidades */
+.filtro{display:block;margin:0 0 14px}
+.filtro span{display:block;font-weight:700;color:var(--navy);margin-bottom:6px}
+.filtro input{
+  width:100%;min-height:48px;padding:10px 14px;border:2px solid var(--navy);border-radius:12px;background:var(--paper);color:var(--ink);font-size:17px;
+}
+.esp-list{list-style:none;margin:0;padding:0}
+.esp-list li{margin:0 0 8px}
+.esp-btn{
+  display:flex;align-items:center;gap:14px;width:100%;min-height:58px;padding:10px 16px;
+  background:var(--paper);border:2px solid var(--line-strong);border-radius:12px;color:var(--navy);
+  font-weight:700;font-size:18px;text-align:left;cursor:pointer;
+}
+.esp-btn svg{flex:none;width:30px;height:30px}
+.esp-btn .chev{margin-left:auto;width:18px;height:18px;opacity:.7}
+.vazio{padding:14px 0;color:var(--navy-soft)}
+
+/* cartão de especialidade */
+.pill{
+  display:inline-block;padding:4px 10px;border-radius:999px;background:var(--navy);color:var(--on-navy);font-size:13px;font-weight:700;margin:0 0 10px;
+}
+.lembrete{
+  border-left:6px solid var(--navy);padding:6px 0 6px 14px;margin:18px 0 6px;font-size:16px;color:var(--navy);
+}
+.lembrete b{display:block;margin-bottom:2px}
+ul.sinais,ul.evite,ul.passo{list-style:none;margin:0;padding:0}
+ul.sinais li,ul.evite li,ul.passo li{
+  position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--line);
+}
+ul.sinais li::before{content:"";position:absolute;left:4px;top:19px;width:10px;height:10px;background:var(--navy);border-radius:2px}
+ul.evite li::before{content:"";position:absolute;left:3px;top:20px;width:12px;height:3px;background:var(--navy)}
+ul.passo li::before{content:"";position:absolute;left:4px;top:19px;width:10px;height:10px;border:2px solid var(--navy);border-radius:50%}
+.frase{
+  margin:0 0 10px;padding:14px 16px;background:var(--paper);border:2px solid var(--line-strong);border-radius:14px;
+}
+.frase q{quotes:"\201C" "\201D";display:block;font-size:18px;line-height:1.4;color:var(--navy);margin:0 0 10px}
+.frase q::before{content:open-quote}.frase q::after{content:close-quote}
+.levar{
+  display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;
+  border:2px solid var(--navy);border-radius:999px;background:transparent;color:var(--navy);font-weight:700;font-size:15px;cursor:pointer;
+}
+.levar[aria-pressed="true"]{background:var(--navy);color:var(--on-navy)}
+.levar svg{width:16px;height:16px}
+.rev{
+  display:inline-block;background:transparent;color:var(--navy);border:1.5px dashed var(--navy);border-radius:6px;padding:0 6px;font-size:12px;font-weight:700;vertical-align:middle;margin-left:6px;
+}
+.fonte{font-size:14px;color:var(--navy-soft);margin-top:24px}
+
+/* fluxo */
+details.passo{
+  border:2px solid var(--line-strong);border-radius:14px;margin:0 0 10px;background:var(--paper);
+}
+details.passo summary{
+  list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;min-height:60px;padding:10px 16px;font-weight:700;font-size:18px;color:var(--navy);
+}
+details.passo summary::-webkit-details-marker{display:none}
+details.passo summary .n{
+  flex:none;width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--on-navy);display:inline-flex;align-items:center;justify-content:center;font-size:17px;
+}
+details.passo summary .arr{margin-left:auto;width:18px;height:18px;flex:none;transition:transform .2s}
+details.passo[open] summary .arr{transform:rotate(180deg)}
+details.passo .corpo{padding:0 16px 14px 16px}
+details.passo .corpo ul.passo li{padding-left:24px}
+.urg{border-left:6px solid var(--navy);padding:4px 0 4px 12px;margin:12px 0}
+.urg b{display:block;color:var(--navy)}
+
+/* contatos */
+.contato{
+  display:block;padding:12px 0;border-bottom:1px solid var(--line);
+}
+.contato .nome{font-weight:700;color:var(--navy);display:block}
+.contato .tel{font-size:24px;font-weight:700;letter-spacing:.02em;color:var(--navy);text-decoration:none;display:inline-block;margin:2px 0}
+.contato .tel:hover,.contato .tel:focus-visible{text-decoration:underline}
+.contato .det{display:block;font-size:15px;color:var(--navy-soft)}
+
+/* cartão-resumo (para captura de tela) */
+.card{
+  background:var(--paper);border:3px solid var(--navy);border-radius:16px;padding:10px 12px 8px;margin:2px 0 12px;
+}
+.card h2{margin:0;font-size:20px;line-height:1.15}
+.card .sub{font-size:12.5px;color:var(--navy-soft);margin:2px 0 8px}
+.grid{display:grid;grid-template-columns:1fr;gap:5px;margin:0 0 6px}
+.cel{border:2px solid var(--navy);border-radius:9px;padding:4px 8px;line-height:1.15;display:flex;align-items:center;gap:8px}
+.cel b{flex:none;font-size:17px;color:var(--navy);min-width:62px}
+.cel span{font-size:13px;color:var(--ink);display:block}
+.cel.full{grid-column:1 / -1;padding:5px 8px;display:block}
+.cel.full span{font-size:12.5px}
+.tels{display:grid;grid-template-columns:1fr 1fr;gap:5px 8px;margin:8px 0 6px;font-size:12px;line-height:1.2;color:var(--navy-soft)}
+.tels div b{display:block;font-size:16.5px;color:var(--navy);letter-spacing:.01em;line-height:1.2}
+.mine{border-top:2px solid var(--navy);padding-top:6px;margin-top:2px}
+.mine .lab{font-size:11px;color:var(--navy-soft);display:block}
+.mine .val{font-size:14.5px;font-weight:700;color:var(--navy);line-height:1.25;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card .foot{font-size:10.5px;color:var(--navy-soft);margin:6px 0 0;line-height:1.25}
+.lembrar{display:flex;align-items:center;gap:10px;margin:14px 0;font-size:16px}
+.lembrar input{width:22px;height:22px;accent-color:var(--navy)}
+
+footer.cred{margin-top:36px;padding-top:16px;border-top:2px solid var(--navy);font-size:14px;color:var(--navy-soft);line-height:1.45}
+footer.cred b{color:var(--navy)}
+
+@media (min-width:480px){h1{font-size:34px}.hero .q{font-size:40px}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <button class="back" id="btnBack" type="button" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Voltar
+  </button>
+  <span class="brand" id="brand">2º CONAMED</span>
+  <span class="ttl" id="ttl"></span>
+  <a class="d100" href="tel:100" aria-label="Disque 100, Direitos Humanos, 24 horas"><b>100</b><small>Disque</small></a>
+</header>
+
+<main id="app">
+
+<!-- ================= ABERTURA ================= -->
+<section class="view on" id="v-home" aria-labelledby="h-home">
+  <h1 id="h-home" class="sr">Que alguém pergunte</h1>
+  <div class="hero">
+    <p class="q">Que, desta vez, alguém pergunte.</p>
+    <p class="who">Violência sexual crônica na infância: repercussões obstétricas e sociais. Relato de caso, 2º CONAMED.</p>
+  </div>
+  <p class="lead">A apresentação terminou. Esta página é o que vem depois: o que você faz na segunda-feira, no seu consultório, com a sua especialidade.</p>
+
+  <a class="big" href="#esp">
+    <span>Minha especialidade<small>Sinais que passam pela sua sala e como abrir a conversa</small></span>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <a class="big ghost" href="#fluxo">
+    <span>Suspeitei, e agora?<small>Seis passos, prazos e a rede da Grande Vitória</small></span>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+
+  <div class="aviso" role="note">
+    <p><b>Conteúdo sensível.</b> Esta página fala de violência sexual contra crianças e adolescentes, sem detalhes gráficos. Se o tema toca você de perto, o Disque 100 atende 24 horas, também para orientação.</p>
+    <p>Material educativo. Não substitui o protocolo do seu serviço nem a avaliação de cada caso.</p>
+  </div>
+
+  <footer class="cred">
+    <b>Autores:</b> Heitor C. Silva, Júlia C. de Andrade, Mariana M. T. B. da Rocha, Pedro H. de S. Oliveira, Pietra M. Ribeiro, Rafael de P. Carvalho, Sam L. de Faria, Paulo C. C. Rocha Junior.<br>
+    <b>Orientadora:</b> Profa. Dra. Mônica Cola C. B. Corrêa.<br>
+    Universidade Vila Velha · versão de 21/09/2026. Nada aqui é enviado ou coletado: a página funciona só no seu aparelho.
+  </footer>
+</section>
+
+<!-- ================= LISTA DE ESPECIALIDADES ================= -->
+<section class="view" id="v-esp" aria-labelledby="h-esp">
+  <h1 id="h-esp">Qual é a sua especialidade?</h1>
+  <p class="muted">A violência sexual chega a cada consultório com uma cara diferente. Escolha a sua para ver o que costuma passar pela sua sala.</p>
+  <label class="filtro"><span>Filtrar</span><input type="search" id="filtro" autocomplete="off" placeholder="Digite parte do nome"></label>
+  <ul class="esp-list" id="espList"></ul>
+  <p class="vazio" id="espVazio" hidden>Nenhuma especialidade com esse nome. Veja o guia geral, no fim da lista.</p>
+</section>
+
+<!-- ================= CARTÃO DA ESPECIALIDADE ================= -->
+<section class="view" id="v-card" aria-labelledby="h-card">
+  <div id="cardBody"></div>
+</section>
+
+<!-- ================= FLUXO ================= -->
+<section class="view" id="v-fluxo" aria-labelledby="h-fluxo">
+  <h1 id="h-fluxo">Suspeitei, e agora?</h1>
+  <p class="lead">Suspeita já basta para agir. Você não precisa de certeza, de boletim de ocorrência nem de autorização de ninguém para cuidar, notificar e encaminhar.</p>
+
+  <details class="passo">
+    <summary><span class="n">1</span>Garanta privacidade e acolha<svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <div class="corpo">
+      <ul class="passo">
+        <li>Atenda a sós com a criança ou adolescente sempre que possível. Diga ao acompanhante que isso é rotina da consulta.</li>
+        <li>Acredite no que ouvir. Não julgue, não demonstre choque e não pergunte por que ela não contou antes.</li>
+        <li>Não prometa segredo. Explique que algumas coisas você precisa contar a pessoas que podem ajudar, e que vai fazer isso com ela.</li>
+        <li>Se ela estiver em risco de voltar para perto do agressor, não a deixe sair sem um plano de proteção (passo 5).</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="passo">
+    <summary><span class="n">2</span>Escute sem induzir e registre<svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <div class="corpo">
+      <ul class="passo">
+        <li>Pergunte o mínimo necessário para cuidar e proteger. A entrevista sobre o que aconteceu é da rede de proteção (escuta especializada e depoimento especial, Lei 13.431/2017), não do consultório.</li>
+        <li>Use perguntas abertas. Não nomeie pessoa nem ato: "como isso aconteceu?", e não "foi o seu padrasto?".</li>
+        <li>Não insista em detalhes, não repita a entrevista e não peça que ela conte de novo para outro colega.</li>
+        <li>Registre no prontuário as palavras dela, entre aspas, com data, hora e quem estava presente. Descreva lesões de forma objetiva, sem interpretar.</li>
+        <li>Nunca examine à força. Exame físico normal não afasta violência sexual.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="passo">
+    <summary><span class="n">3</span>Avalie a urgência<svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <div class="corpo">
+      <div class="urg"><b>Violência há menos de 72 horas</b>
+        Encaminhe imediatamente ao serviço de referência (passo 5), que faz a coleta de vestígios e inicia as profilaxias: HIV (iniciar em até 72 horas, manter por 28 dias), hepatite B conforme a situação vacinal, antibióticos para as ISTs bacterianas. Contracepção de emergência em até 5 dias, se houver risco de gestação. Qualquer hospital do SUS deve prestar esse atendimento (Lei 12.845/2013).</div>
+      <div class="urg"><b>Violência há mais de 72 horas ou crônica</b>
+        As profilaxias já não se aplicam; solicite rastreio de HIV, sífilis, hepatites B e C e teste de gravidez, e encaminhe para seguimento. Em exposição repetida pelo mesmo agressor, a indicação de PEP tem regra própria: confira o PCDT-PEP vigente e avalie caso a caso.<mark class="rev">revisar</mark></div>
+      <div class="urg"><b>Gestação</b>
+        Em menor de 14 anos, é resultado de violência por definição legal (art. 217-A do Código Penal). A interrupção da gestação decorrente de estupro é prevista no art. 128, II, do Código Penal e não exige boletim de ocorrência nem autorização judicial. Encaminhe ao serviço de referência (passo 5).</div>
+      <div class="urg"><b>Risco imediato</b>
+        Ameaça de morte, agressor no local ou risco de fuga com a criança: 190. Emergência clínica: 192.</div>
+    </div>
+  </details>
+
+  <details class="passo">
+    <summary><span class="n">4</span>Notifique e comunique<svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <div class="corpo">
+      <ul class="passo">
+        <li><b>Ficha do SINAN</b> (violência interpessoal ou autoprovocada): violência sexual é de notificação imediata, em até 24 horas, à vigilância do município. Basta a suspeita.</li>
+        <li><b>Conselho Tutelar:</b> comunique a suspeita ou confirmação (ECA, art. 13). Deixar de comunicar é infração administrativa para o médico (ECA, art. 245).</li>
+        <li>Notificar não é denunciar: a notificação é um instrumento de saúde e de proteção, não um boletim de ocorrência. O sigilo profissional não impede; a lei exige.</li>
+        <li>Acione a equipe do serviço: enfermagem, psicologia e serviço social desde o primeiro atendimento.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="passo">
+    <summary><span class="n">5</span>Encaminhe para a rede<svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <div class="corpo">
+      <p class="muted">Grande Vitória. Telefones em texto grande para discagem manual; toque para tentar ligar. Onde aparece "confirme", o dado não pôde ser verificado até 22/09/2026.</p>
+      <div id="contatos"></div>
+    </div>
+  </details>
+
+  <details class="passo">
+    <summary><span class="n">6</span>Guarde o resumo<svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <div class="corpo">
+      <p>Prazos, os dois deveres e os telefones em uma tela só, para tirar um print e levar no celular.</p>
+      <a class="big" href="#resumo"><span>Ver o cartão-resumo</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </details>
+
+  <p class="fonte">Base: Lei 12.845/2013; Lei 13.431/2017; ECA, arts. 13 e 245; Código Penal, arts. 128 e 217-A; Portaria de Consolidação GM/MS 4/2017 (notificação compulsória); PCDT-PEP do Ministério da Saúde; Norma Técnica do MS sobre agravos da violência sexual; Linha de Cuidado do MS para crianças e adolescentes em situação de violências; manual SBP/CFM; diretrizes da OMS (2017).</p>
+</section>
+
+<!-- ================= CARTÃO-RESUMO ================= -->
+<section class="view" id="v-resumo" aria-labelledby="h-resumo">
+  <h1 id="h-resumo" class="sr">Cartão-resumo</h1>
+  <div class="card" id="card">
+    <h2>Suspeitei, e agora?</h2>
+    <p class="sub">Violência sexual contra crianças e adolescentes.</p>
+    <div class="grid">
+      <div class="cel"><b>72 h</b><span>PEP para HIV (por 28 dias), hepatite B e ISTs</span></div>
+      <div class="cel"><b>5 dias</b><span>Contracepção de emergência</span></div>
+      <div class="cel"><b>24 h</b><span>Ficha SINAN, notificação imediata</span></div>
+      <div class="cel"><b>Sempre</b><span>Comunicar o Conselho Tutelar</span></div>
+      <div class="cel full"><span>Gestação em menor de 14 anos é violência (art. 217-A). Interrupção legal: art. 128, II, sem BO e sem autorização judicial.</span></div>
+    </div>
+    <div class="tels">
+      <div><b>100</b>Disque Direitos Humanos</div>
+      <div><b>190 / 192</b>Risco imediato / SAMU</div>
+      <div><b>(27) 3335-7184</b>Pavivis, Hucam, 24 h</div>
+      <div><b>(27) 3132-1916</b>DPCA, Vitória</div>
+      <div><b>(27) 99281-0936</b>Cons. Tutelar Vila Velha</div>
+      <div><b>(27) 98141-0294</b>Cons. Tutelar Vitória</div>
+    </div>
+    <div class="mine">
+      <span class="lab">Minha especialidade: <b class="val" id="rEsp" style="display:inline">Ainda não escolhida</b></span>
+      <span class="lab" style="margin-top:4px">A primeira pergunta que vou levar</span>
+      <div class="val" id="rFrase">Escolha uma frase no cartão da sua especialidade</div>
+    </div>
+    <p class="foot">Material educativo, 2º CONAMED, UVV, 21/09/2026. Não substitui o protocolo do seu serviço. Conselhos: números informados pelos autores; confira o do seu município.</p>
+  </div>
+  <p class="muted">Tire um print desta tela. Se preferir, volte ao cartão da sua especialidade e escolha a frase que vai levar.</p>
+  <label class="lembrar"><input type="checkbox" id="lembrar"> Lembrar minha escolha neste aparelho (nada é enviado)</label>
+  <a class="big ghost" href="#esp"><span>Escolher especialidade e frase</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</section>
+
+</main>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- glifos abstratos (SVG inline, sem imagens externas) ---------- */
+var G = {
+  ped:  '<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="16" cy="16" r="4.5" fill="currentColor"/></svg>',
+  go:   '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4a12 12 0 1 0 0 24 9 9 0 0 1 0-18z" fill="currentColor"/></svg>',
+  emg:  '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M18 3 7 18h8l-1 11 11-15h-8z" fill="currentColor"/></svg>',
+  mfc:  '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 16 16 5l12 11" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><rect x="9" y="15" width="14" height="12" fill="currentColor"/></svg>',
+  psq:  '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 20c0-8 5-14 10-14s10 6 10 14" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M6 20h20M11 20v6M21 20v6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>',
+  gas:  '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 10c6 0 6 6 11 6s5-6 11-6M5 22c6 0 6-6 11-6s5 6 11 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>',
+  uro:  '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4c5 7 8 11 8 16a8 8 0 0 1-16 0c0-5 3-9 8-16z" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="16" cy="21" r="3" fill="currentColor"/></svg>',
+  der:  '<svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="5" width="22" height="22" rx="4" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="20" cy="14" r="2" fill="currentColor"/><circle cx="14" cy="21" r="2" fill="currentColor"/></svg>',
+  ort:  '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 24 24 8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="8" cy="24" r="4" fill="currentColor"/><circle cx="24" cy="8" r="4" fill="currentColor"/></svg>',
+  ger:  '<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M16 4v24M4 16h24" stroke="currentColor" stroke-width="2.5"/></svg>'
+};
+var ARROW = '<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+var CHECK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+/* ---------- bloco "evite", comum a todas ---------- */
+var EVITE = [
+  'Perguntas que induzem ou nomeiam alguém: "foi o seu padrasto?", "ele te machucou?". Pergunte "como isso aconteceu?".',
+  'Prometer segredo. Diga que vai precisar contar a pessoas que podem ajudar, e que fará isso junto com ela.',
+  'Pedir detalhes do ato, repetir a entrevista ou pedir que conte de novo a outro colega. O relato pormenorizado é da escuta especializada, não da consulta.',
+  'Confrontar o acompanhante ou anunciar a notificação quando isso puder aumentar o risco para a criança.',
+  'Examinar à força. E concluir pelo exame: exame normal não afasta violência sexual.',
+  'Reagir com choque, dúvida ou cobrança ("por que você não contou antes?").'
+];
+
+/* ---------- conteúdo por especialidade ---------- */
+var ESP = [
+ {id:'pediatria', nome:'Pediatria', g:'ped',
+  sinais:[
+   'Comportamento sexual inadequado para a idade, ou conhecimento sexual que não combina com a fase do desenvolvimento.',
+   'Regressão: enurese ou encoprese que voltam depois do controle adquirido, medo de dormir, pesadelos.',
+   'Mudança brusca: isolamento, queda no rendimento escolar, medo de uma pessoa ou de um lugar.',
+   'Vulvovaginite, corrimento ou infecção urinária de repetição sem causa; IST ou gestação (em menor de 14 anos, é violência por definição legal).',
+   'Faltas às consultas, demora em procurar cuidado, relato que não bate com o achado.'
+  ],
+  crianca:[
+   'Aqui é um lugar onde a gente pode conversar sobre qualquer coisa. Tem algo que está te preocupando?',
+   'Você se sente seguro em casa? E na escola?',
+   'Se alguma coisa te deixou com medo ou desconfortável, você pode me contar. Eu vou te ouvir.'
+  ],
+  acomp:[
+   'Vocês notaram alguma mudança nela nos últimos meses, no sono, no humor, na escola?',
+   'Nessa idade eu costumo conversar um pouco a sós com a criança. Faz parte da consulta.'
+  ]},
+ {id:'go', nome:'Ginecologia e Obstetrícia', g:'go',
+  sinais:[
+   'Gestação em menor de 14 anos: violência por definição legal (art. 217-A), não "gravidez precoce".',
+   'Sintomas de gestação trazidos pela família como "ganho de peso" ou "puberdade"; pré-natal ausente ou tardio.',
+   'IST, lesão genital ou anal, corrimento recorrente, dor pélvica crônica sem causa.',
+   'Adolescente que não fala; acompanhante que responde por ela ou não sai da sala.',
+   'Parceiro muito mais velho, sinais de coerção, medo desproporcional do exame.'
+  ],
+  crianca:[
+   'Vou te examinar só com a sua permissão, e a gente para quando você quiser.',
+   'Muitas meninas passam por coisas difíceis e não contam para ninguém. Se tiver algo assim com você, aqui você pode.',
+   'Alguém te obriga ou te pressiona a fazer algo que você não quer?'
+  ],
+  acomp:[
+   'Uma parte da consulta é a sós com a adolescente. É rotina para todas.',
+   'Como está a rotina dela em casa? Quem cuida quando você trabalha?'
+  ]},
+ {id:'emergencia', nome:'Emergência', g:'emg',
+  sinais:[
+   'Gestação avançada não reconhecida; hipertensão, convulsão ou abdome agudo em pré-adolescente.',
+   'Lesão genital ou anal aguda, sangramento, dor para sentar ou andar sem trauma que explique.',
+   'Intoxicação, tentativa de suicídio ou autolesão em criança ou adolescente.',
+   'Demora em procurar atendimento; história que muda ou não combina com a lesão.',
+   'Acompanhante que responde por ela, não a deixa a sós, resiste ao exame ou à internação.'
+  ],
+  crianca:[
+   'Eu preciso entender o que aconteceu para cuidar de você. Pode me contar do seu jeito.',
+   'Você está segura aqui. O que aconteceu não é culpa sua.'
+  ],
+  acomp:[
+   'Vou examinar e conversar com ela a sós por alguns minutos. É o procedimento.',
+   'Quando começou? O que vocês notaram antes de trazer?'
+  ]},
+ {id:'mfc', nome:'Medicina de Família e Comunidade', g:'mfc',
+  sinais:[
+   'Consultas frequentes por queixas vagas: cefaleia, dor abdominal recorrente, cansaço, insônia.',
+   'Mudança de comportamento notada pela família, pela escola ou pelo agente comunitário: isolamento, agressividade, queda escolar, fugas.',
+   'Enurese ou encoprese secundárias, transtorno alimentar, autolesão.',
+   'IST, gestação ou pedido de teste de gravidez em menor de 14 anos.',
+   'Adulto que fala por ela em todas as consultas; criança que evita alguém da casa.'
+  ],
+  crianca:[
+   'Como estão as coisas em casa? E na escola?',
+   'Tem alguma situação, ou alguma pessoa, que te deixa desconfortável?',
+   'Eu vou perguntar isso para todo mundo da sua idade: você se sente seguro onde mora?'
+  ],
+  acomp:[
+   'O que vocês acham que mudou nele nos últimos tempos?',
+   'Como é a rotina da casa: quem cuida, quem fica com ela?'
+  ]},
+ {id:'psiquiatria', nome:'Psiquiatria', g:'psq',
+  sinais:[
+   'Comportamento sexualizado inadequado para a idade; conhecimento sexual precoce.',
+   'Autolesão, ideação ou tentativa de suicídio, transtorno alimentar de início abrupto.',
+   'Sintomas de estresse pós-traumático: pesadelos, hipervigilância, dissociação, evitação de pessoa ou lugar.',
+   'Regressão, enurese, fugas, uso de substâncias, queda escolar.',
+   'Medo desproporcional de alguém específico; um segredo que ela "não pode" contar.'
+  ],
+  crianca:[
+   'Às vezes o que a gente sente tem a ver com coisas que aconteceram e ninguém perguntou. Você quer me contar alguma coisa?',
+   'Eu não vou te forçar a falar. Quando você quiser, eu estou aqui.',
+   'Tem algo que você guarda em segredo e que te faz mal?'
+  ],
+  acomp:[
+   'Quando começaram as mudanças? Aconteceu algo diferente na casa nessa época?'
+  ],
+  extra:'Não interprete antes de escutar, e não deixe o diagnóstico do sintoma encerrar a pergunta sobre a causa.'},
+ {id:'gastro', nome:'Gastroenterologia', g:'gas',
+  sinais:[
+   'Dor abdominal recorrente sem causa orgânica; náusea, vômitos ou "ganho de peso" que é gestação.',
+   'Constipação crônica ou encoprese secundária; fissura, dor ou sangramento anal sem constipação que explique.',
+   'Transtorno alimentar de início súbito (restrição, compulsão).',
+   'Queixa que não melhora com tratamento adequado e reaparece.',
+   'Recusa ou medo desproporcional do exame abdominal ou anal.'
+  ],
+  crianca:[
+   'Dor de barriga que não passa às vezes tem a ver com preocupação. Tem algo te preocupando?',
+   'Antes de examinar, quero saber se está tudo bem com você, dentro e fora de casa.'
+  ],
+  acomp:[
+   'Vocês notaram se a dor aparece em algum momento ou situação específica?'
+  ]},
+ {id:'uro', nome:'Urologia e Nefrologia', g:'uro',
+  sinais:[
+   'Infecção urinária de repetição sem alteração anatômica; disúria com urocultura negativa.',
+   'Enurese secundária, depois de controle já adquirido.',
+   'Corrimento uretral, lesão, sangramento ou dor genital e perineal sem trauma que explique.',
+   'Retenção urinária ou medo de urinar por dor.',
+   'Medo desproporcional do exame genital.'
+  ],
+  crianca:[
+   'Vou explicar cada parte do exame antes, e você pode pedir para parar.',
+   'Como você acha que isso aconteceu?',
+   'Você sabe quando a dor começou?'
+  ],
+  acomp:[
+   'Quando começou? Aconteceu algo diferente nessa época?'
+  ]},
+ {id:'derma', nome:'Dermatologia', g:'der',
+  sinais:[
+   'Verrugas anogenitais ou herpes genital em criança: investigar sempre, sem afirmar a via de transmissão antes da avaliação especializada.',
+   'Dermatite perineal recorrente; escoriações ou hematomas em áreas incomuns (face interna das coxas, glúteos, mamas).',
+   'Marcas de mordida, de sucção ou de pressão de dedos.',
+   'Lesões de autolesão: cortes lineares em antebraços ou coxas.',
+   'Recusa de expor determinadas áreas no exame.'
+  ],
+  crianca:[
+   'Vou olhar a pele com calma. Se ficar desconfortável, a gente para.',
+   'Como você acha que essa marca apareceu?'
+  ],
+  acomp:[
+   'Vocês sabem como apareceu? Há quanto tempo?'
+  ]},
+ {id:'orto', nome:'Ortopedia', g:'ort',
+  intro:'Aqui os sinais são mais fracos: a violência sexual raramente chega pela ortopedia. O que chega é a dor sem causa, a lesão cuja história não bate e a criança que não fala.',
+  sinais:[
+   'Dor lombar, pélvica ou no quadril sem achado; dificuldade para andar ou sentar que não se explica.',
+   'Lesão com mecanismo incompatível com a história ou com a idade; várias lesões em fases diferentes (a violência física costuma coexistir).',
+   'Criança que olha para o acompanhante antes de responder; acompanhante que responde por ela.',
+   'Retornos repetidos por "quedas".'
+  ],
+  crianca:[
+   'Como foi que isso aconteceu? Me conta desde o começo.',
+   'Eu pergunto para todo mundo: você se sente seguro em casa?'
+  ],
+  acomp:[
+   'Preciso ouvir também da criança como aconteceu. É rotina.'
+  ],
+  rev:true},
+ {id:'geral', nome:'Outra especialidade (guia geral)', g:'ger',
+  sinais:[
+   'Mudança brusca de comportamento: isolamento, medo de alguém ou de algum lugar, queda escolar, fugas.',
+   'Regressão (enurese, encoprese), pesadelos, autolesão, ideação suicida, transtorno alimentar.',
+   'Comportamento sexual inadequado para a idade.',
+   'Queixas físicas recorrentes sem causa: dor abdominal, cefaleia, sintomas urinários ou genitais.',
+   'IST ou gestação em criança ou adolescente; em menor de 14 anos, violência por definição legal.',
+   'Acompanhante que responde por ela, não a deixa a sós ou traz uma explicação pronta.'
+  ],
+  crianca:[
+   'Aqui você pode falar de qualquer coisa. Tem algo te preocupando?',
+   'Você se sente seguro em casa? E na escola?',
+   'Se alguma coisa te deixou com medo ou desconfortável, pode me contar. Eu vou te ouvir.'
+  ],
+  acomp:[
+   'Vocês notaram alguma mudança nela nos últimos meses?',
+   'Eu costumo conversar um pouco a sós com crianças e adolescentes. Faz parte da consulta.'
+  ]}
+];
+
+/* ---------- contatos (Grande Vitória) ---------- */
+var CONTATOS = [
+ {n:'Disque 100 · Direitos Humanos', t:'100', tel:'100', d:'Nacional, 24 h. Denúncia, orientação e escuta, também anônima.'},
+ {n:'Risco imediato', t:'190', tel:'190', d:'Polícia Militar. Emergência clínica: 192 (SAMU). Denúncia anônima no ES: 181.'},
+ {n:'Pavivis · Hucam/Ufes (referência em violência sexual, inclusive interrupção legal da gestação)', t:'(27) 3335-7184', tel:'+552733357184', d:'Av. Marechal Campos, 1355, Santos Dumont, Vitória. Ambulatório seg. a sex., 8h às 16h; urgência 24 h no plantão da maternidade e pronto-socorro do Hucam. Conferido em 22/09/2026.'},
+ {n:'DPCA · Delegacia de Proteção à Criança e ao Adolescente', t:'(27) 3132-1916', tel:'+552731321916', d:'Também (27) 3132-1917. Seg. a sex., 8h às 18h; fora do horário, qualquer delegacia ou 190. Vitória; confirme o endereço atual pelo telefone.'},
+ {n:'Conselho Tutelar · Vila Velha', t:'(27) 99281-0936', tel:'+5527992810936', d:'Número informado pelos autores em 21/09/2026; confirme. O município tem cinco conselhos regionais.'},
+ {n:'Conselho Tutelar · Vitória', t:'(27) 98141-0294', tel:'+5527981410294', d:'Também (27) 98141-0261. Números informados pelos autores em 21/09/2026; confirme.'},
+ {n:'Casa Rosa · Prefeitura de Vitória', t:'(27) 3332-3290', tel:'+552733323290', d:'Também (27) 98107-0192. Rua Hermes Curry Carneiro, 360, Ilha de Santa Maria. Atende gestação em menor de 14 anos e crianças e adolescentes em violência intrafamiliar, por encaminhamento da rede. Horário: confirme.'},
+ {n:'Himaba · pronto-socorro pediátrico', t:'confirme o telefone', tel:'', d:'Vila Velha. Porta aberta 24 h para urgência pediátrica. Telefone não verificado.'},
+ {n:'HINSG · Hospital Infantil Nossa Senhora da Glória', t:'confirme o telefone', tel:'', d:'Vitória. Referência estadual para menores de 14 anos com HIV ou outras ISTs (seguimento). Telefone não verificado.'}
+];
+
+/* ---------- estado ---------- */
+var state = {esp:null, frase:null, lembrar:false};
+function loadState(){
+  try{
+    var raw = localStorage.getItem('conamed-alguem-pergunte');
+    if(raw){ var s = JSON.parse(raw); if(s && typeof s==='object'){ state.esp=s.esp||null; state.frase=s.frase||null; state.lembrar=true; } }
+  }catch(e){}
+}
+function saveState(){
+  try{
+    if(state.lembrar){ localStorage.setItem('conamed-alguem-pergunte', JSON.stringify({esp:state.esp, frase:state.frase})); }
+    else{ localStorage.removeItem('conamed-alguem-pergunte'); }
+  }catch(e){}
+}
+
+/* ---------- utilidades ---------- */
+function esc(s){ return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+function norm(s){ return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
+function byId(id){ return document.getElementById(id); }
+function findEsp(id){ for(var i=0;i<ESP.length;i++){ if(ESP[i].id===id) return ESP[i]; } return null; }
+
+/* ---------- lista de especialidades ---------- */
+function renderList(filter){
+  var ul = byId('espList'); var q = norm(filter||''); var html=''; var n=0;
+  for(var i=0;i<ESP.length;i++){
+    var e = ESP[i];
+    if(q && norm(e.nome).indexOf(q)<0 && e.id!=='geral') continue;
+    n++;
+    html += '<li><button type="button" class="esp-btn" data-esp="'+e.id+'">'+G[e.g]+'<span>'+esc(e.nome)+'</span>'+ARROW+'</button></li>';
+  }
+  ul.innerHTML = html;
+  byId('espVazio').hidden = n>1 || !q;
+}
+
+/* ---------- cartão da especialidade ---------- */
+function renderCard(e){
+  var h = '';
+  h += '<span class="pill">Guia por especialidade</span>';
+  h += '<h1 id="h-card">'+esc(e.nome)+(e.rev?'<mark class="rev">revisar</mark>':'')+'</h1>';
+  if(e.intro){ h += '<p class="lead">'+esc(e.intro)+'</p>'; }
+  h += '<div class="lembrete"><b>Sinal isolado não fecha nada.</b>Conta o conjunto, o contexto e a mudança ao longo do tempo. Cada item abaixo levanta suspeita; nenhum confirma. E exame físico normal não afasta violência sexual.</div>';
+  h += '<h2>O que costuma passar pela sua sala</h2><ul class="sinais">';
+  for(var i=0;i<e.sinais.length;i++){ h += '<li>'+esc(e.sinais[i])+'</li>'; }
+  h += '</ul>';
+  h += '<h2>Como abrir a conversa</h2><p class="muted">Frases abertas, sem nomear pessoa nem ato. Escolha uma para levar: ela aparece no seu cartão-resumo.</p>';
+  h += '<h3>Para a criança ou adolescente, a sós</h3>';
+  for(var c=0;c<e.crianca.length;c++){ h += fraseHtml(e.crianca[c]); }
+  h += '<h3>Para o acompanhante</h3>';
+  for(var a=0;a<e.acomp.length;a++){ h += fraseHtml(e.acomp[a]); }
+  h += '<h2>Evite</h2><ul class="evite">';
+  if(e.extra){ h += '<li>'+esc(e.extra)+'</li>'; }
+  for(var v=0;v<EVITE.length;v++){ h += '<li>'+esc(EVITE[v])+'</li>'; }
+  h += '</ul>';
+  h += '<h2>Se a suspeita ficou</h2>';
+  h += '<a class="big" href="#fluxo"><span>Suspeitei, e agora?<small>Seis passos, prazos e a rede da Grande Vitória</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>';
+  h += '<p class="fonte">Base: manual SBP/CFM de atendimento a crianças e adolescentes vítimas de violência; Linha de Cuidado do Ministério da Saúde; diretrizes clínicas da OMS (2017); Lei 13.431/2017. Os sinais são inespecíficos e a lista não é exaustiva.</p>';
+  byId('cardBody').innerHTML = h;
+  syncLevar();
+}
+function fraseHtml(f){
+  return '<div class="frase"><q>'+esc(f)+'</q><button type="button" class="levar" data-frase="'+esc(f)+'" aria-pressed="false">'+CHECK+'<span>Levar esta frase</span></button></div>';
+}
+function syncLevar(){
+  var bs = document.querySelectorAll('.levar');
+  for(var i=0;i<bs.length;i++){
+    var on = state.frase && bs[i].getAttribute('data-frase')===state.frase;
+    bs[i].setAttribute('aria-pressed', on?'true':'false');
+    bs[i].querySelector('span').textContent = on ? 'Frase escolhida' : 'Levar esta frase';
+  }
+}
+
+/* ---------- contatos ---------- */
+function renderContatos(){
+  var h='';
+  for(var i=0;i<CONTATOS.length;i++){
+    var c=CONTATOS[i];
+    h += '<div class="contato"><span class="nome">'+esc(c.n)+'</span>';
+    if(c.tel){ h += '<a class="tel" href="tel:'+esc(c.tel)+'">'+esc(c.t)+'</a>'; }
+    else { h += '<span class="tel">'+esc(c.t)+'<mark class="rev">revisar</mark></span>'; }
+    h += '<span class="det">'+esc(c.d)+'</span></div>';
+  }
+  byId('contatos').innerHTML = h;
+}
+
+/* ---------- resumo ---------- */
+function renderResumo(){
+  var e = state.esp ? findEsp(state.esp) : null;
+  byId('rEsp').textContent = e ? e.nome : 'Ainda não escolhida';
+  byId('rFrase').textContent = state.frase ? '\u201C'+state.frase+'\u201D' : 'Escolha uma frase no cartão da sua especialidade';
+  byId('lembrar').checked = !!state.lembrar;
+}
+
+/* ---------- roteamento ---------- */
+var TITLES = {home:'', esp:'Minha especialidade', card:'', fluxo:'Suspeitei, e agora?', resumo:'Cartão-resumo'};
+function route(){
+  var h = (location.hash||'').replace(/^#\/?/,'');
+  var view='home', esp=null;
+  if(h==='esp') view='esp';
+  else if(h.indexOf('esp/')===0){ esp=findEsp(h.slice(4)); view = esp?'card':'esp'; }
+  else if(h==='fluxo') view='fluxo';
+  else if(h==='resumo') view='resumo';
+  var views=document.querySelectorAll('.view');
+  for(var i=0;i<views.length;i++){ views[i].classList.toggle('on', views[i].id==='v-'+view); }
+  if(view==='card'){ state.esp=esp.id; saveState(); renderCard(esp); }
+  if(view==='esp'){ renderList(byId('filtro').value); }
+  if(view==='resumo'){ renderResumo(); }
+  byId('btnBack').hidden = (view==='home');
+  byId('brand').hidden = (view!=='home');
+  byId('ttl').textContent = view==='card' && esp ? esp.nome : TITLES[view];
+  document.title = (view==='home' ? 'Que alguém pergunte' : (view==='card'&&esp ? esp.nome : TITLES[view])) + ' · 2º CONAMED';
+  window.scrollTo(0,0);
+  var head = document.querySelector('#v-'+view+' h1');
+  if(head){ head.setAttribute('tabindex','-1'); head.focus({preventScroll:true}); }
+}
+function goBack(){
+  var h = (location.hash||'').replace(/^#\/?/,'');
+  if(h.indexOf('esp/')===0) location.hash='#esp';
+  else if(h==='resumo') location.hash='#fluxo';
+  else location.hash='';
+}
+
+/* ---------- eventos ---------- */
+document.addEventListener('click', function(ev){
+  var b = ev.target.closest ? ev.target.closest('button') : null;
+  if(!b) return;
+  if(b.id==='btnBack'){ goBack(); return; }
+  if(b.hasAttribute('data-esp')){ location.hash = '#esp/'+b.getAttribute('data-esp'); return; }
+  if(b.classList.contains('levar')){
+    var f = b.getAttribute('data-frase');
+    state.frase = (state.frase===f) ? null : f;
+    saveState(); syncLevar(); return;
+  }
+});
+byId('filtro').addEventListener('input', function(){ renderList(this.value); });
+byId('lembrar').addEventListener('change', function(){ state.lembrar = this.checked; saveState(); });
+window.addEventListener('hashchange', route);
+
+loadState();
+renderContatos();
+route();
+})();
+</script>
+</body>
+</html>
